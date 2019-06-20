@@ -6,9 +6,11 @@ let move = true;
 let screenWidth = window.innerWidth;
 let squareHeight = 0;
 let squareWidth = 0;
+let squareColor = "";
+let colors = ["red", "green", "orange", "black", "blue", "yellow"];
 
 square.style.marginLeft = squareMarginLeft + "px";
-square.style.backgroundColor = "green";
+square.style.backgroundColor = squareColor;
 
 const movingSquare = () => {
 	setInterval(() => {
@@ -28,9 +30,14 @@ const movingSquare = () => {
 			squareWidth = (squareMarginLeft / screenWidth) * 100;
 		}
 
+		if (squareMarginLeft % 50 === 0) {
+			squareColor = colors[Math.floor(Math.random() * colors.length)];
+		}
+
 		square.style.height = squareHeight + "px";
 		square.style.width = squareWidth + "px";
 		square.style.marginLeft = squareMarginLeft + "px";
+		square.style.backgroundColor = squareColor;
 	}, 1)
 }
 
