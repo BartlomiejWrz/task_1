@@ -27,16 +27,14 @@ const movingSquare = () => {
 			squareHeight = (squareMarginLeft / screenWidth) * 100;
 			squareWidth = (squareMarginLeft / screenWidth) * 100;
 		}
+
 		square.style.height = squareHeight + "px";
 		square.style.width = squareWidth + "px";
 		square.style.marginLeft = squareMarginLeft + "px";
 	}, 1)
 }
 
-const changingSize = () => {
 
-}
-
-// movingSquare();
+movingSquare();
 
 
