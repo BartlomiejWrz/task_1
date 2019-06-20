@@ -14,7 +14,7 @@ square.style.backgroundColor = squareColor;
 
 const movingSquare = () => {
 	setInterval(() => {
-		if (squareMarginLeft > screenWidth) {
+		if (squareMarginLeft >= screenWidth - squareHeight) {
 			move = !move
 		} else if (squareMarginLeft <= 0) {
 			move = !move;
@@ -40,7 +40,6 @@ const movingSquare = () => {
 		square.style.backgroundColor = squareColor;
 	}, 1)
 }
-
 
 movingSquare();
 
